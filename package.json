@@ -14,12 +14,16 @@
   "author": "Anyta Ali",
   "license": "MIT",
   "bugs": {
+
+
+       
     "url": "https://github.com/anytaaly/devlink-brad-course/issues"
   },
   "homepage": "https://github.com/anytaaly/devlink-brad-course#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "config": "^3.3.1",
+    "config": "^3.3.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.6.0",
     "gravatar": "^1.8.1",
@@ -28,7 +32,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0",
+    "concurrently": "^5.3.0",
     "nodemon": "^2.0.4"
   }
 }

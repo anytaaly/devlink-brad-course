@@ -1,25 +1,26 @@
-const express = require("express");
-const connectDB = require("./config/db");
+const express = require('express'),
+    connectDB = require('./config/db');
 
+//Create global app object  
 const app = express();
 
-//connect database
-connectDB();
+//Connect Database
+connectDB(); 
 
-//Init Middleware
-app.use(express.json({ extended: false }));
+//Inint Middleware 
+app.use(express.json({ extended: false}))
 
-app.get("/", (req, res) => res.send("API Running"));
 
-//define Routes
-app.use("/api/users", require("./routes/api/users"));
-app.use("/api/profile", require("./routes/api/profile"));
-app.use("/api/auth", require("./routes/api/auth"));
-app.use("/api/posts", require("./routes/api/posts"));
-app.use("/api/payment", require("./routes/api/payment"));
-app.use("/api/workout", require("./routes/api/workout"));
-app.use("/api/gallery", require("./routes/api/gallery"));
+//All routes -initialized
+app.get('/', (req, res) => res.send('Api Running'))
+
+//Define Routes
+app.use('/api/users', require('./routes/api/users')); 
+app.use('/api/auth', require('./routes/api/auth')); 
+app.use('/api/profile', require('./routes/api/profile')); 
+app.use('/api/posts', require('./routes/api/posts')); 
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log("Server started on port ${PORT}"));
+//Finally, lets start our server....
+var server = app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
